@@ -1,0 +1,43 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--brand-light-border);
+  background: white;
+  color: var(--brand-green);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+
+  /* Touch target padding to reach 44px */
+  padding: 6px;
+  touch-action: manipulation;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--brand-green);
+  background: var(--brand-green-pale);
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.value {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--brand-dark);
+  min-width: 24px;
+  text-align: center;
+}

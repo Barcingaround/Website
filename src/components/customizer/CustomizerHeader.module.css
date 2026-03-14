@@ -1,0 +1,157 @@
+.header {
+  background: var(--brand-ivory);
+  border-bottom: 1px solid var(--brand-light-border);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.typeBadge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brand-green);
+}
+
+.sizePill {
+  background: var(--brand-green);
+  color: white;
+  border-radius: var(--radius-pill);
+  padding: 1px 8px;
+  font-size: 0.65rem;
+}
+
+.boardCount {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  color: var(--brand-warm-brown);
+  background: var(--brand-light-border);
+  border-radius: var(--radius-pill);
+  padding: 2px 10px;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nameDisplay {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--brand-dark);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.nameDisplay:hover {
+  background: var(--brand-light-border);
+}
+
+.editIcon {
+  color: var(--brand-warm-brown);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.nameInput {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--brand-dark);
+  border: 2px solid var(--brand-green);
+  border-radius: var(--radius-sm);
+  padding: 2px 8px;
+  background: white;
+  outline: none;
+  width: 220px;
+}
+
+.duplicateBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-green);
+  background: var(--brand-green-pale);
+  border: 1px solid var(--brand-green);
+  border-radius: var(--radius-pill);
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.duplicateBtn:hover {
+  background: var(--brand-green);
+  color: white;
+}
+
+.budgetSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Cheese variety dots (CO only) */
+.cheeseCounter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.cheeseDots {
+  display: flex;
+  gap: 4px;
+}
+
+.cheeseDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-light-border);
+  transition: background var(--transition-fast);
+}
+
+.cheeseDotFilled {
+  background: var(--brand-gold);
+}
+
+.cheeseDotsGood .cheeseDotFilled {
+  background: var(--brand-green);
+}
+
+.cheeseLabel {
+  font-size: 0.8125rem;
+  color: var(--brand-mid);
+}
+
+.cheeseHint {
+  color: var(--color-warning);
+}

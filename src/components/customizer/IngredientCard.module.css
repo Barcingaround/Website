@@ -1,0 +1,109 @@
+.card {
+  background: white;
+  border: 1.5px solid var(--brand-light-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: grid;
+  grid-template-areas:
+    "icon name"
+    "icon yield"
+    "icon allergens"
+    "icon stepper";
+  grid-template-columns: 52px 1fr;
+  gap: var(--space-xs) var(--space-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.selected {
+  border-color: var(--brand-green);
+  background: var(--brand-green-pale);
+}
+
+.dim {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.icon {
+  grid-area: icon;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--brand-ivory);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--brand-light-border);
+  flex-shrink: 0;
+}
+
+.nameRow {
+  grid-area: name;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.name {
+  font-size: 0.8125rem;
+}
+
+.badges {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.yield {
+  grid-area: yield;
+  font-size: 0.75rem;
+}
+
+.yieldHint {
+  color: var(--brand-warm-brown);
+  opacity: 0.7;
+}
+
+.yieldActive {
+  color: var(--brand-green);
+}
+
+.allergens {
+  grid-area: allergens;
+  display: flex;
+  gap: 4px;
+}
+
+.allergenIcon {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.stepperRow {
+  grid-area: stepper;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 2px;
+}
+
+@media (max-width: 480px) {
+  .card {
+    grid-template-areas:
+      "icon name"
+      "icon badges"
+      "yield yield"
+      "stepper stepper";
+    grid-template-columns: 40px 1fr;
+  }
+
+  .badges {
+    grid-area: badges;
+  }
+}

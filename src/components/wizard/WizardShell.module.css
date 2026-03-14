@@ -1,0 +1,118 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.progressHeader {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: rgba(250, 245, 236, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--brand-light-border);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.brandLogo {
+  flex-shrink: 0;
+}
+
+.brandText {
+  font-family: var(--font-script);
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--brand-green);
+  white-space: nowrap;
+}
+
+.stepNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.progressTrack {
+  position: relative;
+  height: 4px;
+  background: var(--brand-light-border);
+  border-radius: var(--radius-pill);
+  margin: 8px 0;
+}
+
+.progressFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--brand-green);
+  border-radius: var(--radius-pill);
+  transition: width var(--transition-med);
+}
+
+.stepDot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--brand-light-border);
+  border: 2px solid var(--brand-cream);
+  transition: background var(--transition-fast);
+}
+
+.stepDotActive {
+  background: var(--brand-green);
+}
+
+.stepLabels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stepLabel {
+  font-family: var(--font-label);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--brand-light-border);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color var(--transition-fast);
+}
+
+.stepLabelDone {
+  color: var(--brand-warm-brown);
+}
+
+.stepLabelActive {
+  color: var(--brand-green);
+  font-weight: 700;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .progressHeader {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .brandText {
+    font-size: 0.9rem;
+  }
+
+  .stepLabels {
+    display: none;
+  }
+}

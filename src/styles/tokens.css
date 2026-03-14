@@ -1,0 +1,57 @@
+:root {
+  /* ─── Brand Colors ─── */
+  --brand-green:       #2D5A2D;
+  --brand-green-light: #4A7A4A;
+  --brand-green-pale:  #E8F0E8;
+  --brand-cream:       #FAF5EC;
+  --brand-ivory:       #F5EDD8;
+  --brand-gold:        #C8A040;
+  --brand-gold-light:  #E8C060;
+  --brand-warm-brown:  #8B6040;
+  --brand-dark:        #1A1A14;
+  --brand-mid:         #5A4A38;
+  --brand-light-border:#E0D8C8;
+
+  /* ─── Semantic ─── */
+  --color-warning:     #E8962A;
+  --color-error:       #C44A2A;
+  --color-success:     #2D5A2D;
+
+  /* ─── Typography ─── */
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-script:   'Cormorant Garamond', Georgia, serif;
+  --font-body:     'DM Sans', system-ui, sans-serif;
+  --font-label:    'DM Sans', system-ui, sans-serif;
+
+  /* ─── Spacing ─── */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+
+  /* ─── Border Radius ─── */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
+  --radius-xl:   28px;
+  --radius-pill: 999px;
+
+  /* ─── Shadows ─── */
+  --shadow-card:  0 2px 12px rgba(45, 35, 20, 0.08), 0 1px 3px rgba(45, 35, 20, 0.05);
+  --shadow-board: 0 8px 32px rgba(45, 35, 20, 0.18), 0 2px 8px rgba(45, 35, 20, 0.10);
+  --shadow-hover: 0 4px 20px rgba(45, 35, 20, 0.14);
+  --shadow-modal: 0 24px 64px rgba(45, 35, 20, 0.24), 0 4px 16px rgba(45, 35, 20, 0.12);
+
+  /* ─── Transitions ─── */
+  --transition-fast: 150ms ease;
+  --transition-med:  300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* ─── Z-Index ─── */
+  --z-sticky: 50;
+  --z-drawer: 100;
+  --z-modal:  200;
+  --z-toast:  300;
+}

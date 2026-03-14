@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-warm-brown);
+  background: var(--brand-ivory);
+  border: 1px solid var(--brand-light-border);
+  border-radius: var(--radius-pill);
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.filter:hover {
+  border-color: var(--brand-warm-brown);
+}
+
+.filterActive {
+  background: var(--brand-green-pale);
+  border-color: var(--brand-green);
+  color: var(--brand-green);
+}
+
+.checkbox {
+  width: 12px;
+  height: 12px;
+  accent-color: var(--brand-green);
+  flex-shrink: 0;
+}

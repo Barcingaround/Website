@@ -1,0 +1,59 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.barContainer {
+  flex: 1;
+  height: 8px;
+  background: var(--brand-light-border);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--brand-green);
+  border-radius: var(--radius-pill);
+  transition: width 250ms ease-out, background-color 200ms ease;
+  min-width: 2px;
+}
+
+.barFill.warning {
+  background: var(--color-warning);
+}
+
+.barFill.full {
+  background: var(--color-error);
+}
+
+.barFill.accs {
+  background: var(--brand-gold);
+}
+
+.counter {
+  font-family: var(--font-label);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--brand-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-width: 72px;
+  text-align: right;
+}
+
+.counterFull {
+  color: var(--color-error);
+}

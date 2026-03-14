@@ -1,0 +1,115 @@
+.section { padding: var(--space-2xl) 0; flex: 1; }
+.header { text-align: center; margin-bottom: var(--space-xl); }
+.header p { margin-top: var(--space-sm); }
+
+.form { max-width: 960px; margin: 0 auto; }
+
+.formGrid { display: grid; grid-template-columns: 1fr 380px; gap: var(--space-xl); align-items: start; }
+
+.formColumn { display: flex; flex-direction: column; gap: var(--space-lg); }
+
+.field { display: flex; flex-direction: column; gap: var(--space-xs); }
+
+.fieldRow { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+
+.label {
+  font-family: var(--font-label); font-size: 0.8125rem; font-weight: 600;
+  color: var(--brand-dark); text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+.fieldNote { font-size: 0.7rem; color: var(--brand-warm-brown); text-transform: none; font-weight: 400; }
+
+.input, .select, .textarea {
+  font-family: var(--font-body); font-size: 1rem;
+  border: 1.5px solid var(--brand-light-border);
+  border-radius: var(--radius-md); padding: 10px 14px;
+  background: white; color: var(--brand-dark);
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  outline: none; border-color: var(--brand-green);
+}
+
+.textarea { resize: vertical; min-height: 72px; }
+
+.charCount { font-size: 0.75rem; color: var(--brand-warm-brown); text-align: right; margin-top: 2px; }
+
+/* Order summary */
+.summaryColumn { position: sticky; top: 80px; }
+
+.orderSummary {
+  background: var(--brand-dark); color: white;
+  border-radius: var(--radius-xl); padding: var(--space-xl);
+  display: flex; flex-direction: column; gap: var(--space-sm);
+}
+
+.orderSummary h4 {
+  font-family: var(--font-display); font-weight: 700; font-size: 1.125rem;
+  color: white; margin-bottom: var(--space-xs);
+}
+
+.summaryRow { display: flex; justify-content: space-between; font-size: 0.9375rem; opacity: 0.8; }
+
+.summaryTotal {
+  font-weight: 700; font-size: 1.125rem; opacity: 1;
+  padding-top: var(--space-sm); border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: var(--space-xs);
+}
+
+.totalAmt { color: var(--brand-gold-light); }
+
+.priceNote { font-size: 0.8125rem; color: var(--color-warning); opacity: 0.9; }
+.taxNote { font-size: 0.75rem; opacity: 0.5; font-style: italic; }
+.amexNote { font-size: 0.7rem; opacity: 0.4; font-style: italic; }
+
+/* Validation */
+.validationErrors { display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-md); }
+
+.validationError {
+  font-size: 0.875rem; padding: 8px 12px; border-radius: var(--radius-sm);
+}
+
+.validation_error { background: rgba(196, 74, 42, 0.1); color: var(--color-error); border-left: 3px solid var(--color-error); }
+.validation_warning { background: rgba(232, 150, 42, 0.1); color: var(--color-warning); border-left: 3px solid var(--color-warning); }
+
+/* Submit row */
+.submitRow {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: var(--space-xl); padding-top: var(--space-xl);
+  border-top: 1px solid var(--brand-light-border);
+}
+
+.btnBack {
+  font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500;
+  color: var(--brand-warm-brown); background: none; border: none; cursor: pointer;
+}
+
+.btnBack:hover { color: var(--brand-dark); }
+
+.btnSubmit {
+  background: var(--brand-green); color: var(--brand-cream);
+  font-family: var(--font-body); font-weight: 600; font-size: 1.125rem;
+  padding: 18px 48px; border-radius: var(--radius-pill); border: none; cursor: pointer;
+  transition: all var(--transition-fast); box-shadow: 0 4px 16px rgba(45,90,45,0.25);
+}
+
+.btnSubmit:hover:not(:disabled) { background: var(--brand-green-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(45,90,45,0.32); }
+.btnSubmit:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+/* Success state */
+.success {
+  text-align: center; max-width: 480px; margin: 0 auto;
+  padding: var(--space-2xl) 0; display: flex; flex-direction: column;
+  align-items: center; gap: var(--space-lg);
+}
+
+.successIcon { font-size: 4rem; }
+
+.successNote { font-style: italic; color: var(--brand-warm-brown); }
+
+@media (max-width: 768px) {
+  .formGrid { grid-template-columns: 1fr; }
+  .summaryColumn { position: static; }
+  .fieldRow { grid-template-columns: 1fr; }
+}

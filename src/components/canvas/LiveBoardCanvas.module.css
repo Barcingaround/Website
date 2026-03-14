@@ -1,0 +1,55 @@
+.canvasWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.canvasWrapper.full {
+  height: 100%;
+  min-height: 320px;
+}
+
+.canvasWrapper.thumbnail {
+  max-width: 280px;
+  max-height: 200px;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  /* Subtle board-level drop shadow */
+  filter: drop-shadow(0 8px 24px rgba(45, 26, 0, 0.28));
+  transition: filter var(--transition-base);
+}
+
+.canvasWrapper.full .svg:hover {
+  filter: drop-shadow(0 12px 32px rgba(45, 26, 0, 0.35));
+}
+
+.canvasWrapper.thumbnail .svg {
+  border-radius: var(--radius-md);
+  filter: drop-shadow(0 4px 12px rgba(45, 26, 0, 0.22));
+}
+
+/* Empty state overlay */
+.emptyState {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.emptyText {
+  font-family: var(--font-script);
+  font-size: 1.1rem;
+  color: var(--brand-gold);
+  opacity: 0.7;
+  text-align: center;
+  padding: 0 2rem;
+}
