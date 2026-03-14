@@ -11,5 +11,6 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+    host: true,   // exposes on your local network IP so phones can connect
   },
 });
