@@ -11,6 +11,7 @@ import { seededRNG } from '../utils/seededRandom';
 import { getIngredientById } from '../data/ingredients';
 import { FIXED_INCLUSIONS } from '../data/ingredients/accoutrements';
 import { BOARD_DIMENSIONS } from './boardDimensions';
+import { fillGaps } from './GapFiller';
 import {
   drawContinuousFan,
   drawRosetteCluster,
@@ -234,6 +235,10 @@ export function computeBoardLayout(board: BoardConfig): LayoutItem[] {
       layoutItems.push(drawHerbSprig(`rosemary_${i}`, cx, cy, rot, '#4A7A30'));
     }
   }
+
+  // ─── 12. GAP FILL (>95% board coverage) ──────────────────────────────────
+  const gapFillers = fillGaps(layoutItems, dims.width, dims.height, zones.GARNISH_SCATTER, rng);
+  layoutItems.push(...gapFillers);
 
   // ─── Sort by zIndex ───────────────────────────────────────────────────────
   return layoutItems.sort((a, b) => a.zIndex - b.zIndex);
