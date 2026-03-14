@@ -4,19 +4,19 @@ import { trackBoardDuplicated } from '../../utils/analytics';
 import styles from './DuplicateBoardButton.module.css';
 
 interface DuplicateBoardButtonProps {
-  boardIndex: number;
+  boardId: string;
 }
 
-export function DuplicateBoardButton({ boardIndex }: DuplicateBoardButtonProps): React.ReactElement {
+export function DuplicateBoardButton({ boardId }: DuplicateBoardButtonProps): React.ReactElement {
   const { boards, duplicateBoard } = useBuilderStore(s => ({
     boards: s.boards,
     duplicateBoard: s.duplicateBoard,
   }));
 
-  const board = boards[boardIndex];
+  const board = boards.find(b => b.boardId === boardId);
 
   function handleDuplicate() {
-    duplicateBoard(boardIndex);
+    duplicateBoard(boardId);
     if (board) trackBoardDuplicated(board.sku);
   }
 

@@ -1,4 +1,5 @@
 import { useBuilderStore } from '../../store/builderStore';
+import { useAnalytics } from '../../hooks/useAnalytics';
 import Step0Hero from './Step0Hero';
 import Step1BoardType from './Step1BoardType';
 import Step2SizeQuantity from './Step2SizeQuantity';
@@ -20,6 +21,7 @@ const STEPS = [
 
 export default function WizardShell() {
   const currentStep = useBuilderStore(s => s.currentStep);
+  useAnalytics();
 
   const progressPct = (currentStep / (STEPS.length - 1)) * 100;
 

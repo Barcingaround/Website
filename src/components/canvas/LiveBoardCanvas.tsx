@@ -45,7 +45,7 @@ export function LiveBoardCanvas({
   const { viewBox, width, height, shape } = dims;
 
   // Clip path ID unique per board to avoid cross-board clipping conflicts
-  const clipId = `board-clip-${board.id ?? sku}`;
+  const clipId = `board-clip-${board.boardId ?? sku}`;
 
   return (
     <div
@@ -55,7 +55,7 @@ export function LiveBoardCanvas({
         className,
       ].filter(Boolean).join(' ')}
       role="img"
-      aria-label={`${board.name ?? 'Your board'} — live board illustration`}
+      aria-label={`${board.boardName ?? 'Your board'} — live board illustration`}
     >
       <svg
         ref={ref}
@@ -140,3 +140,5 @@ export function LiveBoardCanvas({
     </div>
   );
 }
+
+export default LiveBoardCanvas;

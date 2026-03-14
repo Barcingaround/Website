@@ -22,7 +22,7 @@ export function encodeBoardConfig(board: BoardConfig): string {
     s: board.ingredientSelections.map(sel => [sel.ingredientId, sel.pointsAllocated]),
     a: board.accoutrementSelections.map(sel => [sel.ingredientId, sel.pointsAllocated]),
     seed: board.visualSeed,
-    name: board.name,
+    name: board.boardName,
   };
   return btoa(JSON.stringify(payload));
 }
@@ -39,7 +39,7 @@ export function decodeBoardConfig(encoded: string): Partial<BoardConfig> | null 
       ingredientSelections: payload.s.map(toSel),
       accoutrementSelections: payload.a.map(toSel),
       visualSeed: payload.seed,
-      name: payload.name,
+      boardName: payload.name,
     };
   } catch {
     return null;

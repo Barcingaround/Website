@@ -6,6 +6,9 @@ import './styles/tokens.css';
 import './styles/global.css';
 import './styles/typography.css';
 import './styles/animations.css';
+import { initIframeResize } from './utils/iframeResize';
+
+initIframeResize();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

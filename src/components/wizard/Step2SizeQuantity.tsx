@@ -45,10 +45,11 @@ export default function Step2SizeQuantity() {
 
   function handleContinue() {
     if (totalBoards === 0) return;
-    // Add boards to state (one by one based on quantity)
+    // Clear any boards from a previous visit to this step, then add fresh
+    useBuilderStore.getState().resetOrder();
     for (const [sku, qty] of Object.entries(quantities)) {
       for (let i = 0; i < qty; i++) {
-        addBoard(sku as BoardSKU, false);
+        useBuilderStore.getState().addBoard(sku as BoardSKU, false);
       }
     }
     setStep(3);
