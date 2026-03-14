@@ -718,10 +718,11 @@ export function drawHerbSprig(
   cx: number,
   cy: number,
   rotation: number,
-  color: string
+  color: string,
+  rng: () => number = Math.random
 ): LayoutItem {
   const elements: SVGElementDescriptor[] = [];
-  const len = 28 + Math.random() * 12;
+  const len = 28 + rng() * 12;
   // Stem
   elements.push({
     type: 'line',

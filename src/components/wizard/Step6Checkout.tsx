@@ -225,7 +225,10 @@ export default function Step6Checkout() {
                   {validation.errors.map((err, i) => (
                     <div
                       key={i}
-                      className={`${styles.validationError} ${styles[`validation_${err.severity}`]}`}
+                      className={[
+                        styles.validationError,
+                        err.severity === 'error' ? styles.validation_error : styles.validation_warning,
+                      ].join(' ')}
                     >
                       {err.severity === 'error' ? '⚠️' : '💡'} {err.message}
                     </div>

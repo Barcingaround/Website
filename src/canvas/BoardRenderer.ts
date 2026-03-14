@@ -9,7 +9,6 @@ import type { LayoutItem } from './IngredientDrawers';
 import { getZonesForSKU } from './ZoneEngine';
 import { seededRNG } from '../utils/seededRandom';
 import { getIngredientById } from '../data/ingredients';
-import { FIXED_INCLUSIONS } from '../data/ingredients/accoutrements';
 import { BOARD_DIMENSIONS } from './boardDimensions';
 import { fillGaps } from './GapFiller';
 import {
@@ -232,7 +231,7 @@ export function computeBoardLayout(board: BoardConfig): LayoutItem[] {
       const cx = garnishZone.x + rng() * garnishZone.w;
       const cy = garnishZone.y + rng() * garnishZone.h;
       const rot = (rng() - 0.5) * 160;
-      layoutItems.push(drawHerbSprig(`rosemary_${i}`, cx, cy, rot, '#4A7A30'));
+      layoutItems.push(drawHerbSprig(`rosemary_${i}`, cx, cy, rot, '#4A7A30', rng));
     }
   }
 

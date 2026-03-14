@@ -106,6 +106,7 @@ export default function Step3Customizer() {
 
           <div className={styles.tabsWrapper}>
             <IngredientTabs
+              key={currentBoard.boardId}
               board={currentBoard}
               dietaryFilters={dietaryFilters}
               getPoints={(id, isAcc) => getIngredientPoints(id, isAcc)}

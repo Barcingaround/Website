@@ -123,7 +123,7 @@ export function fillGaps(
 
     const rot = (rng() - 0.5) * 160;
     const color = rng() > 0.5 ? '#4A7A30' : '#6A9A40'; // rosemary vs microgreens tint
-    const sprig = drawHerbSprig(`gap_fill_${sprigIndex++}`, x, y, rot, color);
+    const sprig = drawHerbSprig(`gap_fill_${sprigIndex++}`, x, y, rot, color, rng);
     fillerItems.push(sprig);
 
     // Mark cell as covered

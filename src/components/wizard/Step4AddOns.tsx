@@ -9,7 +9,9 @@ export default function Step4AddOns() {
   const addAddOn = useBuilderStore(s => s.addAddOn);
   const removeAddOn = useBuilderStore(s => s.removeAddOn);
   const setAddOnCustomText = useBuilderStore(s => s.setAddOnCustomText);
-  const [messageText, setMessageText] = useState('');
+  // Initialize from store so text is restored if user navigates away and back
+  const storedMessageText = addOns.find(a => a.customText)?.customText ?? '';
+  const [messageText, setMessageText] = useState(storedMessageText);
 
   function toggleAddOn(id: string, price: number) {
     if (addOns.find(a => a.addOnId === id)) {
