@@ -47,8 +47,8 @@ export function drawDrapedMeat(
 ): LayoutItem {
   const elements: SVGElementDescriptor[] = [];
 
-  // Number of individual drape pieces scales with quantity
-  const numPieces = Math.max(4, Math.min(18, Math.floor(units / 2)));
+  // Number of individual drape pieces = unit count directly (each unit = 1 visible drape fold)
+  const numPieces = Math.max(3, Math.min(20, units));
   const isProsc = ingredientId === 'prosciutto' || ingredientId.includes('prosciutto');
   const gradId = isProsc ? 'prosciuttoFill' : ingredientId.includes('serrano') ? 'serranoFill' : 'coppaFill';
 

@@ -1,7 +1,11 @@
 /**
  * IngredientLayer — renders a single LayoutItem as an SVG <g> element.
  * Recursively renders SVGElementDescriptor children.
- * Handles enter/exit animations via CSS classes.
+ * Handles staggered enter animations via CSS transitions.
+ *
+ * v2: staggered entry — each item enters with a per-index delay so the board
+ * "fills in" from back to front (lower zIndex items appear first).
+ * Spring-like cubic-bezier overshoot for a lively feel.
  */
 
 import React, { useEffect, useState } from 'react';
@@ -10,18 +14,17 @@ import type { LayoutItem, SVGElementDescriptor } from '../../canvas/IngredientDr
 interface IngredientLayerProps {
   item: LayoutItem;
   animationsEnabled: boolean;
+  /** Index in the sorted layout array — drives stagger delay */
+  index?: number;
 }
 
 /** Recursively render SVGElementDescriptor tree into React SVG elements */
 function renderDescriptor(desc: SVGElementDescriptor, key: string): React.ReactElement | null {
   const { type, attrs, children } = desc;
 
-  // Convert attrs record to React-compatible SVG props
-  // (convert kebab-case like stroke-width → strokeWidth)
   const props: Record<string, string | number | undefined> = { key };
   for (const [k, v] of Object.entries(attrs)) {
     if (v === undefined) continue;
-    // React SVG props use camelCase for some attributes
     const reactKey = k
       .replace(/-([a-z])/g, (_, c: string) => c.toUpperCase())
       .replace(/^class$/, 'className');
@@ -52,7 +55,11 @@ function renderDescriptor(desc: SVGElementDescriptor, key: string): React.ReactE
   }
 }
 
-export function IngredientLayer({ item, animationsEnabled }: IngredientLayerProps): React.ReactElement {
+export function IngredientLayer({
+  item,
+  animationsEnabled,
+  index = 0,
+}: IngredientLayerProps): React.ReactElement {
   const [visible, setVisible] = useState(!animationsEnabled);
 
   useEffect(() => {
@@ -60,22 +67,30 @@ export function IngredientLayer({ item, animationsEnabled }: IngredientLayerProp
       setVisible(true);
       return;
     }
-    // Trigger enter animation on mount
-    const id = requestAnimationFrame(() => setVisible(true));
-    return () => cancelAnimationFrame(id);
-  }, [animationsEnabled]);
+    // Staggered delay: each item enters ~40ms after the previous one,
+    // capped at 480ms so large boards don't feel sluggish.
+    const staggerMs = Math.min(index * 40, 480);
+    const id = setTimeout(() => {
+      requestAnimationFrame(() => setVisible(true));
+    }, staggerMs);
+    return () => clearTimeout(id);
+  }, [animationsEnabled, index]);
 
   const transform = item.rotation
     ? `translate(${item.x + item.width / 2}, ${item.y + item.height / 2}) rotate(${item.rotation}) translate(${-(item.x + item.width / 2)}, ${-(item.y + item.height / 2)})`
     : undefined;
 
+  // Spring-like cubic-bezier (overshoot ~8%) for lively pop
+  const springEasing = 'cubic-bezier(0.34, 1.56, 0.64, 1)';
+  const duration = '320ms';
+
   const style: React.CSSProperties = animationsEnabled ? {
     opacity: visible ? 1 : 0,
-    transition: 'opacity 300ms cubic-bezier(0.34, 1.56, 0.64, 1), transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1)',
+    transition: `opacity ${duration} ${springEasing}, transform ${duration} ${springEasing}`,
     transformOrigin: `${item.x + item.width / 2}px ${item.y + item.height / 2}px`,
     transform: visible
       ? (transform ?? 'none')
-      : `${transform ? transform + ' ' : ''}scale(0.85)`,
+      : `${transform ? transform + ' ' : ''}scale(0.82)`,
   } : {};
 
   return (

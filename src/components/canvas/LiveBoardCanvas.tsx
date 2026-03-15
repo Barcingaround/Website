@@ -95,11 +95,12 @@ export function LiveBoardCanvas({
 
         {/* Clipped ingredient layers — sorted by zIndex from computeBoardLayout */}
         <g clipPath={`url(#${clipId})`}>
-          {layoutItems.map((item) => (
+          {layoutItems.map((item, idx) => (
             <IngredientLayer
               key={item.id}
               item={item}
               animationsEnabled={animated && !thumbnail}
+              index={idx}
             />
           ))}
         </g>
