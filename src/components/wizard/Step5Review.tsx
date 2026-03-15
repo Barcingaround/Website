@@ -3,9 +3,142 @@ import { useOrderState } from '../../hooks/useOrderState';
 import { getIngredientById } from '../../data/ingredients';
 import { BOARD_SIZES } from '../../data/boardSizes';
 import { ADD_ONS } from '../../data/addOns';
+import type { BoardConfig, IngredientSelection } from '../../store/builderStore';
+import type { Ingredient } from '../../data/ingredients';
 import LiveBoardCanvas from '../canvas/LiveBoardCanvas';
 import styles from './Step5Review.module.css';
 
+// ─── Category meta ───────────────────────────────────────────────────────────
+const CATEGORY_META: Record<string, { label: string; color: string; bg: string; border: string }> = {
+  cheese:       { label: 'Cheeses',       color: '#8B6A00', bg: '#FDF6DC', border: '#E8D48A' },
+  meat:         { label: 'Meats',         color: '#7A2424', bg: '#FBF0F0', border: '#D4A8A8' },
+  fruit:        { label: 'Fruits & Extras', color: '#2D5A2D', bg: '#EFF6EF', border: '#A8C8A8' },
+  accoutrement: { label: 'Accoutrements', color: '#6B4423', bg: '#FAF2EA', border: '#D4B898' },
+};
+
+const CATEGORY_ORDER: Ingredient['category'][] = ['meat', 'cheese', 'fruit', 'accoutrement'];
+
+// ─── Ingredient grouped row ───────────────────────────────────────────────────
+interface GroupedIngredient {
+  ingredient: Ingredient;
+  sel: IngredientSelection;
+  units: number;
+}
+
+function groupIngredients(
+  selections: IngredientSelection[],
+  board: BoardConfig
+): Record<string, GroupedIngredient[]> {
+  const groups: Record<string, GroupedIngredient[]> = {};
+  for (const sel of selections) {
+    const ing = getIngredientById(sel.ingredientId);
+    if (!ing) continue;
+    const unitsPerPt = typeof ing.unitsPerPoint === 'number'
+      ? ing.unitsPerPoint
+      : (ing.unitsPerPoint as { cc: number; co: number })[board.category] ?? 0;
+    const units = sel.pointsAllocated * unitsPerPt;
+    const cat = ing.category;
+    if (!groups[cat]) groups[cat] = [];
+    groups[cat].push({ ingredient: ing, sel, units });
+  }
+  return groups;
+}
+
+// ─── Ingredient dot (mini icon using renderColor) ─────────────────────────────
+function IngredientDot({ ingredient }: { ingredient: Ingredient }) {
+  const color = (ingredient.renderColor as string | undefined) ?? '#888';
+  return (
+    <span
+      className={styles.ingDot}
+      style={{ background: color }}
+      aria-hidden="true"
+    />
+  );
+}
+
+// ─── Board ingredient breakdown ───────────────────────────────────────────────
+function BoardIngredientBreakdown({ board }: { board: BoardConfig }) {
+  const mainGroups = groupIngredients(board.ingredientSelections, board);
+  const accsGroups = groupIngredients(board.accoutrementSelections, board);
+
+  // Merge accoutrements into main groups under 'accoutrement' key
+  const allGroups: Record<string, GroupedIngredient[]> = { ...mainGroups };
+  if (accsGroups['accoutrement']) {
+    allGroups['accoutrement'] = [
+      ...(allGroups['accoutrement'] ?? []),
+      ...accsGroups['accoutrement'],
+    ];
+  }
+
+  const hasIngredients = Object.values(allGroups).some(g => g.length > 0);
+
+  return (
+    <div className={styles.breakdown}>
+      {!hasIngredients && (
+        <p className={styles.emptyNote}>No ingredients selected yet.</p>
+      )}
+
+      {CATEGORY_ORDER.map(cat => {
+        const group = allGroups[cat];
+        if (!group || group.length === 0) return null;
+        const meta = CATEGORY_META[cat];
+
+        return (
+          <div key={cat} className={styles.categoryBlock}>
+            <div
+              className={styles.categoryHeader}
+              style={{ color: meta.color, borderColor: meta.border }}
+            >
+              <span
+                className={styles.categoryPill}
+                style={{ background: meta.bg, color: meta.color, borderColor: meta.border }}
+              >
+                {meta.label}
+              </span>
+              <span className={styles.categoryLine} style={{ background: meta.border }} />
+            </div>
+
+            <div className={styles.ingRows}>
+              {group.map(({ ingredient, sel, units }) => (
+                <div key={ingredient.id} className={styles.ingRow}>
+                  <div className={styles.ingLeft}>
+                    <IngredientDot ingredient={ingredient} />
+                    <span className={styles.ingName}>{ingredient.displayName}</span>
+                  </div>
+                  <div className={styles.ingRight}>
+                    {cat !== 'accoutrement' ? (
+                      <span
+                        className={styles.ingQtyPill}
+                        style={{
+                          background: (CATEGORY_META[ingredient.category]?.bg ?? '#f5f5f5'),
+                          color: (CATEGORY_META[ingredient.category]?.color ?? '#333'),
+                          borderColor: (CATEGORY_META[ingredient.category]?.border ?? '#ddd'),
+                        }}
+                      >
+                        {units} {ingredient.unitLabel}
+                      </span>
+                    ) : (
+                      <span className={styles.ingQtyPillNeutral}>
+                        {sel.pointsAllocated > 0 ? `${units} ${ingredient.unitLabel}` : 'included'}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+
+      <div className={styles.fixedInclusions}>
+        <span className={styles.fixedInclusionsLabel}>Always included</span>
+        <span className={styles.fixedInclusionsItems}>Jars · Rosemary · Microgreens</span>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main Step5Review ─────────────────────────────────────────────────────────
 export default function Step5Review() {
   const setStep = useBuilderStore(s => s.setStep);
   const setCurrentBoardIndex = useBuilderStore(s => s.setCurrentBoardIndex);
@@ -29,6 +162,7 @@ export default function Step5Review() {
             const config = BOARD_SIZES[board.sku];
             return (
               <div key={board.boardId} className={styles.boardCard}>
+                {/* ── Card header ── */}
                 <div className={styles.boardCardTop}>
                   <div className={styles.boardInfo}>
                     <div className={styles.boardLabel}>
@@ -53,44 +187,13 @@ export default function Step5Review() {
                   </div>
                 </div>
 
+                {/* ── Card body: canvas + breakdown ── */}
                 <div className={styles.boardCardBody}>
-                  {/* Mini board thumbnail */}
                   <div className={styles.boardThumbnail}>
                     <LiveBoardCanvas board={board} className={styles.thumbCanvas} />
                   </div>
 
-                  {/* Ingredient list */}
-                  <div className={styles.ingredientList}>
-                    {board.ingredientSelections.map(sel => {
-                      const ing = getIngredientById(sel.ingredientId);
-                      if (!ing) return null;
-                      const unitsPerPt = typeof ing.unitsPerPoint === 'number'
-                        ? ing.unitsPerPoint
-                        : (ing.unitsPerPoint as { cc: number; co: number })[board.category] ?? 0;
-                      const units = sel.pointsAllocated * unitsPerPt;
-                      return (
-                        <div key={sel.ingredientId} className={styles.ingRow}>
-                          <span className={styles.ingName}>{ing.displayName}</span>
-                          <span className={styles.ingQty}>{units} {ing.unitLabel}</span>
-                        </div>
-                      );
-                    })}
-                    {board.accoutrementSelections.length > 0 && (
-                      <div className={styles.accsSection}>
-                        <div className={styles.accsSectionLabel}>Accoutrements</div>
-                        {board.accoutrementSelections.map(sel => {
-                          const ing = getIngredientById(sel.ingredientId);
-                          if (!ing) return null;
-                          return (
-                            <div key={sel.ingredientId} className={styles.ingRow}>
-                              <span className={styles.ingName}>{ing.displayName}</span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                    <div className={styles.fixedNote}>+ Jars, rosemary, microgreens (always included)</div>
-                  </div>
+                  <BoardIngredientBreakdown board={board} />
                 </div>
 
                 <div className={styles.deliveryNote}>
@@ -101,7 +204,7 @@ export default function Step5Review() {
           })}
         </div>
 
-        {/* Add-ons */}
+        {/* ── Add-ons ── */}
         {addOns.length > 0 && (
           <div className={styles.addOnsSection}>
             <h3>Add-Ons</h3>
@@ -117,7 +220,7 @@ export default function Step5Review() {
           </div>
         )}
 
-        {/* Totals */}
+        {/* ── Totals ── */}
         <div className={styles.totals}>
           <div className={styles.totalRow}>
             <span>Boards subtotal</span>

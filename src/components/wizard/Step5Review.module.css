@@ -1,89 +1,216 @@
+/* ─── Page shell ─────────────────────────────────────────────────────────── */
 .section { padding: var(--space-2xl) 0; flex: 1; }
 .header { text-align: center; margin-bottom: var(--space-xl); }
-.header p { margin-top: var(--space-sm); }
+.header p { margin-top: var(--space-sm); color: var(--brand-mid); }
 
-.boards { display: flex; flex-direction: column; gap: var(--space-lg); max-width: 860px; margin: 0 auto; }
+/* ─── Board list ─────────────────────────────────────────────────────────── */
+.boards { display: flex; flex-direction: column; gap: var(--space-lg); max-width: 900px; margin: 0 auto; }
 
+/* ─── Board card ─────────────────────────────────────────────────────────── */
 .boardCard {
   background: var(--brand-ivory);
   border: 1.5px solid var(--brand-light-border);
   border-radius: var(--radius-xl);
-  padding: var(--space-xl);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: var(--space-lg);
-}
-
-.boardCardTop { display: flex; justify-content: space-between; align-items: flex-start; }
-
-.boardInfo { display: flex; flex-direction: column; gap: 4px; }
-
-.boardLabel {
-  display: flex; align-items: center; gap: var(--space-xs);
-  font-family: var(--font-label); font-size: 0.75rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-green);
-}
-
-.boardName {
-  font-family: var(--font-script); font-size: 1.4rem;
-  font-weight: 500; font-style: italic; color: var(--brand-dark);
-}
-
-.boardServes { font-size: 0.875rem; color: var(--brand-mid); }
-
-.boardActions { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-sm); }
-
-.boardPrice { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--brand-dark); }
-.approxNote { font-size: 0.75rem; color: var(--color-warning); }
-
-.editBtn {
-  font-family: var(--font-body); font-size: 0.8125rem; font-weight: 600;
-  color: var(--brand-green); background: var(--brand-green-pale);
-  border: 1px solid var(--brand-green); border-radius: var(--radius-pill);
-  padding: 4px 14px; cursor: pointer; transition: all var(--transition-fast);
-}
-
-.editBtn:hover { background: var(--brand-green); color: white; }
-
-.boardCardBody { display: flex; gap: var(--space-lg); }
-
-.boardThumbnail {
-  width: 160px; flex-shrink: 0;
-  border-radius: var(--radius-md); overflow: hidden;
   box-shadow: var(--shadow-card);
 }
 
-.thumbCanvas { width: 160px; }
+/* ── Top bar ── */
+.boardCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-lg) var(--space-xl);
+  border-bottom: 1px solid var(--brand-light-border);
+  background: white;
+}
 
-.ingredientList { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.boardInfo { display: flex; flex-direction: column; gap: 3px; }
+
+.boardLabel {
+  display: flex; align-items: center; gap: var(--space-xs);
+  font-family: var(--font-label); font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-green);
+}
+
+.boardName {
+  font-family: var(--font-script); font-size: 1.5rem;
+  font-weight: 500; font-style: italic; color: var(--brand-dark);
+  line-height: 1.2;
+}
+
+.boardServes { font-size: 0.8125rem; color: var(--brand-mid); }
+
+.boardActions { display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-sm); }
+
+.boardPrice { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--brand-dark); }
+.approxNote { font-size: 0.7rem; color: var(--color-warning); }
+
+.editBtn {
+  font-family: var(--font-body); font-size: 0.8rem; font-weight: 600;
+  color: var(--brand-green); background: var(--brand-green-pale);
+  border: 1px solid var(--brand-green); border-radius: var(--radius-pill);
+  padding: 5px 16px; cursor: pointer; transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+.editBtn:hover { background: var(--brand-green); color: white; }
+
+/* ── Card body ── */
+.boardCardBody {
+  display: flex;
+  gap: 0;
+  flex: 1;
+}
+
+/* ── Thumbnail ── */
+.boardThumbnail {
+  width: 200px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--brand-light-border);
+  background: var(--brand-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+.thumbCanvas { width: 100%; border-radius: var(--radius-md); }
+
+/* ─── Ingredient breakdown panel ─────────────────────────────────────────── */
+.breakdown {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  overflow: hidden;
+}
+
+.emptyNote { font-size: 0.875rem; color: var(--brand-warm-brown); font-style: italic; }
+
+/* ── Category block ── */
+.categoryBlock { display: flex; flex-direction: column; gap: 4px; }
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: 2px;
+}
+
+.categoryPill {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.categoryLine {
+  flex: 1;
+  height: 1px;
+  opacity: 0.5;
+}
+
+/* ── Ingredient rows ── */
+.ingRows { display: flex; flex-direction: column; gap: 0; }
 
 .ingRow {
-  display: flex; justify-content: space-between;
-  font-size: 0.875rem; padding: 3px 0;
-  border-bottom: 1px solid var(--brand-light-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
 }
 
-.ingName { color: var(--brand-dark); font-weight: 500; }
-.ingQty { color: var(--brand-warm-brown); font-size: 0.8125rem; }
+.ingRow:last-child { border-bottom: none; }
 
-.accsSection { margin-top: var(--space-sm); }
-.accsSectionLabel {
-  font-family: var(--font-label); font-size: 0.7rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.05em; color: var(--brand-gold);
-  margin-bottom: 4px;
+.ingLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
 }
 
-.fixedNote { font-size: 0.75rem; color: var(--brand-warm-brown); font-style: italic; margin-top: 4px; }
+.ingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1.5px rgba(0,0,0,0.08);
+}
 
+.ingName {
+  font-size: 0.875rem;
+  color: var(--brand-dark);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ingRight { flex-shrink: 0; margin-left: var(--space-sm); }
+
+.ingQtyPill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.ingQtyPillNeutral {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--brand-warm-brown);
+  font-style: italic;
+}
+
+/* ── Fixed inclusions note ── */
+.fixedInclusions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+  padding-top: var(--space-xs);
+  border-top: 1px dashed var(--brand-light-border);
+}
+
+.fixedInclusionsLabel {
+  font-family: var(--font-label);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-mid);
+  white-space: nowrap;
+}
+
+.fixedInclusionsItems {
+  font-size: 0.75rem;
+  color: var(--brand-warm-brown);
+  font-style: italic;
+}
+
+/* ── Delivery note ── */
 .deliveryNote {
   font-size: 0.8125rem; color: var(--brand-warm-brown);
-  background: var(--brand-green-pale); border-radius: var(--radius-sm);
-  padding: 6px 12px; border-left: 3px solid var(--brand-green);
+  background: var(--brand-green-pale);
+  padding: 8px 24px;
+  border-top: 1px solid rgba(45,90,45,0.12);
 }
 
-/* Add-ons */
+/* ─── Add-ons ─────────────────────────────────────────────────────────────── */
 .addOnsSection {
-  max-width: 860px; margin: var(--space-lg) auto 0;
+  max-width: 900px; margin: var(--space-lg) auto 0;
   background: var(--brand-ivory); border: 1.5px solid var(--brand-light-border);
   border-radius: var(--radius-lg); padding: var(--space-lg);
 }
@@ -94,9 +221,9 @@
   border-bottom: 1px solid var(--brand-light-border);
 }
 
-/* Totals */
+/* ─── Totals ──────────────────────────────────────────────────────────────── */
 .totals {
-  max-width: 860px; margin: var(--space-lg) auto 0;
+  max-width: 900px; margin: var(--space-lg) auto 0;
   background: var(--brand-dark); color: white;
   border-radius: var(--radius-xl); padding: var(--space-xl);
   display: flex; flex-direction: column; gap: var(--space-sm);
@@ -115,8 +242,9 @@
 .priceNote { font-size: 0.8125rem; color: var(--color-warning); opacity: 0.9; }
 .taxNote { font-size: 0.75rem; opacity: 0.5; font-style: italic; }
 
+/* ─── Actions ─────────────────────────────────────────────────────────────── */
 .actions {
-  display: flex; justify-content: space-between; max-width: 860px;
+  display: flex; justify-content: space-between; max-width: 900px;
   margin: var(--space-xl) auto 0;
 }
 
@@ -124,7 +252,6 @@
   font-family: var(--font-body); font-size: 0.9375rem; font-weight: 500;
   color: var(--brand-warm-brown); background: none; border: none; cursor: pointer;
 }
-
 .btnBack:hover { color: var(--brand-dark); }
 
 .btnContinue {
@@ -133,10 +260,20 @@
   padding: 16px 40px; border-radius: var(--radius-pill); border: none; cursor: pointer;
   transition: all var(--transition-fast); box-shadow: 0 4px 16px rgba(45,90,45,0.25);
 }
-
 .btnContinue:hover { background: var(--brand-green-light); transform: translateY(-2px); }
 
-@media (max-width: 640px) {
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 700px) {
   .boardCardBody { flex-direction: column; }
-  .boardThumbnail { width: 100%; height: 120px; }
+
+  .boardThumbnail {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--brand-light-border);
+    padding: var(--space-md);
+    max-height: 200px;
+  }
+
+  .boardCardTop { padding: var(--space-md); }
+  .breakdown { padding: var(--space-md); }
 }
