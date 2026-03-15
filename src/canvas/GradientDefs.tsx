@@ -392,6 +392,489 @@ export function GradientDefs(): React.ReactElement {
         <stop offset="80%"  stopColor="#000000" stopOpacity="0.06" />
         <stop offset="100%" stopColor="#000000" stopOpacity="0.16" />
       </radialGradient>
+
+      {/* ── Sprite Library Gradients ─────────────────────────────────── */}
+      <radialGradient id="ap1" cx="44%" cy="37%" r="58%">
+          <stop offset="0%" stopColor="#EC9240"/>
+          <stop offset="50%" stopColor="#D27020"/>
+          <stop offset="100%" stopColor="#B25810"/>
+      </radialGradient>
+      <radialGradient id="ap2" cx="44%" cy="37%" r="58%">
+          <stop offset="0%" stopColor="#E88A38"/>
+          <stop offset="50%" stopColor="#CA6818"/>
+          <stop offset="100%" stopColor="#AA5008"/>
+      </radialGradient>
+      <radialGradient id="ap3a" cx="44%" cy="37%" r="58%">
+          <stop offset="0%" stopColor="#EC9240"/>
+          <stop offset="100%" stopColor="#B25810"/>
+      </radialGradient>
+      <radialGradient id="ap3b" cx="44%" cy="37%" r="58%">
+          <stop offset="0%" stopColor="#E28838"/>
+          <stop offset="100%" stopColor="#AA5008"/>
+      </radialGradient>
+      <radialGradient id="ap3c" cx="44%" cy="37%" r="58%">
+          <stop offset="0%" stopColor="#EE9848"/>
+          <stop offset="100%" stopColor="#B66018"/>
+      </radialGradient>
+      <radialGradient id="ap3d" cx="44%" cy="37%" r="58%">
+          <stop offset="0%" stopColor="#E68C3C"/>
+          <stop offset="100%" stopColor="#AE5E10"/>
+      </radialGradient>
+      <linearGradient id="b1p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#E4D4A8"/>
+          <stop offset="100%" stopColor="#F8F0DC"/>
+      </linearGradient>
+      <linearGradient id="b2p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#DDD0A2"/>
+          <stop offset="100%" stopColor="#F6EDD8"/>
+      </linearGradient>
+      <linearGradient id="b3p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D8C898"/>
+          <stop offset="100%" stopColor="#F4ECD6"/>
+      </linearGradient>
+      <linearGradient id="b5p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#DDD0A4"/>
+          <stop offset="100%" stopColor="#F8F2E0"/>
+      </linearGradient>
+      <radialGradient id="blackB" cx="34%" cy="28%" r="66%">
+          <stop offset="0%" stopColor="#5C3C68"/>
+          <stop offset="100%" stopColor="#241020"/>
+      </radialGradient>
+      <radialGradient id="blueB" cx="30%" cy="26%" r="70%">
+          <stop offset="0%" stopColor="#6C80B8"/>
+          <stop offset="100%" stopColor="#2E3870"/>
+      </radialGradient>
+      <radialGradient id="bou1" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F6F2EA"/>
+          <stop offset="70%" stopColor="#EDE6D6"/>
+          <stop offset="100%" stopColor="#DDD4BF"/>
+      </radialGradient>
+      <radialGradient id="bou2L" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F8F4EC"/>
+          <stop offset="100%" stopColor="#DDD4BF"/>
+      </radialGradient>
+      <radialGradient id="bou2R" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F5F0E8"/>
+          <stop offset="100%" stopColor="#D8CEB8"/>
+      </radialGradient>
+      <radialGradient id="cas1" cx="36%" cy="28%" r="64%">
+          <stop offset="0%" stopColor="#4C2A10"/>
+          <stop offset="100%" stopColor="#1A0C04"/>
+      </radialGradient>
+      <radialGradient id="cas2" cx="36%" cy="28%" r="64%">
+          <stop offset="0%" stopColor="#522E12"/>
+          <stop offset="100%" stopColor="#1E0E06"/>
+      </radialGradient>
+      <radialGradient id="cha1" cx="36%" cy="28%" r="64%">
+          <stop offset="0%" stopColor="#4C2A10"/>
+          <stop offset="60%" stopColor="#2E1608"/>
+          <stop offset="100%" stopColor="#1A0C04"/>
+      </radialGradient>
+      <radialGradient id="cha2" cx="36%" cy="28%" r="64%">
+          <stop offset="0%" stopColor="#4C2A10"/>
+          <stop offset="100%" stopColor="#1A0C04"/>
+      </radialGradient>
+      <linearGradient id="cn1" x1="0.0000" y1="0.5000" x2="1.0000" y2="0.5000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#4A7228"/>
+          <stop offset="15%" stopColor="#5A8C30"/>
+          <stop offset="50%" stopColor="#638E34"/>
+          <stop offset="85%" stopColor="#527C2C"/>
+          <stop offset="100%" stopColor="3E6020"/>
+      </linearGradient>
+      <linearGradient id="cn2" x1="0.0000" y1="1.0000" x2="1.0000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#4A7228"/>
+          <stop offset="50%" stopColor="#638E34"/>
+          <stop offset="100%" stopColor="#3E6020"/>
+      </linearGradient>
+      <linearGradient id="cn3" x1="1.0000" y1="0.0000" x2="0.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#5A8C30"/>
+          <stop offset="50%" stopColor="#638E34"/>
+          <stop offset="100%" stopColor="#4A7228"/>
+      </linearGradient>
+      <radialGradient id="cp1" cx="38%" cy="32%" r="62%">
+          <stop offset="0%" stopColor="#502E14"/>
+          <stop offset="60%" stopColor="#301808"/>
+          <stop offset="100%" stopColor="#1C0C04"/>
+      </radialGradient>
+      <radialGradient id="cp2" cx="38%" cy="32%" r="62%">
+          <stop offset="0%" stopColor="#502E14"/>
+          <stop offset="100%" stopColor="#1A0A04"/>
+      </radialGradient>
+      <radialGradient id="d1flesh" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#FEFBFA"/>
+          <stop offset="72%" stopColor="#F5F0EE"/>
+          <stop offset="100%" stopColor="#EDE5E0"/>
+      </radialGradient>
+      <radialGradient id="d1skin" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F42878"/>
+          <stop offset="62%" stopColor="#E01860"/>
+          <stop offset="100%" stopColor="#C00848"/>
+      </radialGradient>
+      <radialGradient id="d2flesh" cx="100%" cy="50%" r="100%">
+          <stop offset="0%" stopColor="#FDFBFA"/>
+          <stop offset="100%" stopColor="#EDE5E0"/>
+      </radialGradient>
+      <radialGradient id="d2skin" cx="100%" cy="50%" r="100%">
+          <stop offset="0%" stopColor="#F42878"/>
+          <stop offset="100%" stopColor="#C00848"/>
+      </radialGradient>
+      <radialGradient id="d3flesh" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#FEFCFA"/>
+          <stop offset="100%" stopColor="#EDE5E0"/>
+      </radialGradient>
+      <radialGradient id="d3skin" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F02870"/>
+          <stop offset="100%" stopColor="#BC0848"/>
+      </radialGradient>
+      <radialGradient id="d4fl" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#FEFCFA"/>
+          <stop offset="100%" stopColor="#EDE5E0"/>
+      </radialGradient>
+      <radialGradient id="d4sA" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F43080"/>
+          <stop offset="100%" stopColor="#C20848"/>
+      </radialGradient>
+      <radialGradient id="d4sB" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F02870"/>
+          <stop offset="100%" stopColor="#BE0840"/>
+      </radialGradient>
+      <radialGradient id="d4sC" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#EC2068"/>
+          <stop offset="100%" stopColor="#B80838"/>
+      </radialGradient>
+      <linearGradient id="g1side" x1="0.0000" y1="0.0000" x2="0.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D8B430"/>
+          <stop offset="100%" stopColor="#B89018"/>
+      </linearGradient>
+      <linearGradient id="g1top" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#FFEE78"/>
+          <stop offset="100%" stopColor="#E8CC40"/>
+      </linearGradient>
+      <linearGradient id="g2top" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#FAE060"/>
+          <stop offset="100%" stopColor="#E6C840"/>
+      </linearGradient>
+      <radialGradient id="g3flat" cx="32%" cy="32%" r="68%">
+          <stop offset="0%" stopColor="#FFF285"/>
+          <stop offset="50%" stopColor="#F4D048"/>
+          <stop offset="100%" stopColor="#D8B028"/>
+      </radialGradient>
+      <linearGradient id="gc1p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#F7F7F0"/>
+          <stop offset="100%" stopColor="#FEFEF8"/>
+      </linearGradient>
+      <radialGradient id="gcLog" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F8F8F2"/>
+          <stop offset="80%" stopColor="#EFEFE8"/>
+          <stop offset="100%" stopColor="#E4E4D8"/>
+      </radialGradient>
+      <radialGradient id="gr1" cx="32%" cy="28%" r="68%">
+          <stop offset="0%" stopColor="#C8EE72"/>
+          <stop offset="50%" stopColor="#8EC850"/>
+          <stop offset="100%" stopColor="#5E9030"/>
+      </radialGradient>
+      <radialGradient id="gr2" cx="30%" cy="26%" r="70%">
+          <stop offset="0%" stopColor="#A85A90"/>
+          <stop offset="46%" stopColor="#6C305C"/>
+          <stop offset="100%" stopColor="#4A1840"/>
+      </radialGradient>
+      <radialGradient id="gr3" cx="32%" cy="28%" r="68%">
+          <stop offset="0%" stopColor="#C0EE68"/>
+          <stop offset="50%" stopColor="#88C448"/>
+          <stop offset="100%" stopColor="#5C8A28"/>
+      </radialGradient>
+      <radialGradient id="gr4g" cx="32%" cy="28%" r="68%">
+          <stop offset="0%" stopColor="#C4EE70"/>
+          <stop offset="50%" stopColor="#8BC848"/>
+          <stop offset="100%" stopColor="#5C8E28"/>
+      </radialGradient>
+      <radialGradient id="gr4r" cx="30%" cy="26%" r="70%">
+          <stop offset="0%" stopColor="#A45888"/>
+          <stop offset="46%" stopColor="#6A2E5A"/>
+          <stop offset="100%" stopColor="#481840"/>
+      </radialGradient>
+      <radialGradient id="kw1c" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F8F8E8"/>
+          <stop offset="100%" stopColor="#E8E8C8"/>
+      </radialGradient>
+      <radialGradient id="kw1g" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#E8F0AC"/>
+          <stop offset="24%" stopColor="#C4E05C"/>
+          <stop offset="58%" stopColor="#72AC30"/>
+          <stop offset="80%" stopColor="#5C9220"/>
+          <stop offset="100%" stopColor="#4A7A18"/>
+      </radialGradient>
+      <radialGradient id="kw2c" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F8F8E6"/>
+          <stop offset="100%" stopColor="#E4E4C4"/>
+      </radialGradient>
+      <radialGradient id="kw2g" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#E4ECA8"/>
+          <stop offset="24%" stopColor="#C0DA58"/>
+          <stop offset="58%" stopColor="#6CA428"/>
+          <stop offset="100%" stopColor="#4A7C16"/>
+      </radialGradient>
+      <radialGradient id="kw3c" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#F8F8E8"/>
+          <stop offset="100%" stopColor="#E8E8C8"/>
+      </radialGradient>
+      <radialGradient id="kw3gA" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#DDE8A4"/>
+          <stop offset="24%" stopColor="#B8D854"/>
+          <stop offset="58%" stopColor="#689C26"/>
+          <stop offset="100%" stopColor="#487A16"/>
+      </radialGradient>
+      <radialGradient id="kw3gB" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#E8F0AC"/>
+          <stop offset="24%" stopColor="#C4E05E"/>
+          <stop offset="58%" stopColor="#72AC30"/>
+          <stop offset="100%" stopColor="#4A7A18"/>
+      </radialGradient>
+      <linearGradient id="m1p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D8C870"/>
+          <stop offset="100%" stopColor="#F0E490"/>
+      </linearGradient>
+      <linearGradient id="m2p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D4C46A"/>
+          <stop offset="100%" stopColor="#EEE08E"/>
+      </linearGradient>
+      <linearGradient id="m3p" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#DCD070"/>
+          <stop offset="100%" stopColor="#F4EC98"/>
+      </linearGradient>
+      <linearGradient id="mFanBase" x1="0.5000" y1="1.0000" x2="0.5000" y2="0.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D0C068"/>
+          <stop offset="100%" stopColor="#ECE08E"/>
+      </linearGradient>
+      <radialGradient id="mand1" cx="50%" cy="100%" r="100%">
+          <stop offset="0%" stopColor="#FFA840"/>
+          <stop offset="60%" stopColor="#F08020"/>
+          <stop offset="100%" stopColor="#D86010"/>
+      </radialGradient>
+      <radialGradient id="mand2" cx="50%" cy="100%" r="100%">
+          <stop offset="0%" stopColor="#FFB040"/>
+          <stop offset="60%" stopColor="#F08820"/>
+          <stop offset="100%" stopColor="#D86810"/>
+      </radialGradient>
+      <radialGradient id="mand3A" cx="50%" cy="100%" r="100%">
+          <stop offset="0%" stopColor="#FFA840"/>
+          <stop offset="60%" stopColor="#F08020"/>
+          <stop offset="100%" stopColor="#D86010"/>
+      </radialGradient>
+      <radialGradient id="mand3B" cx="50%" cy="100%" r="100%">
+          <stop offset="0%" stopColor="#FFB048"/>
+          <stop offset="60%" stopColor="#F28828"/>
+          <stop offset="100%" stopColor="#DA6818"/>
+      </radialGradient>
+      <radialGradient id="ol1" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#A8C860"/>
+          <stop offset="55%" stopColor="#7EA038"/>
+          <stop offset="100%" stopColor="#587220"/>
+      </radialGradient>
+      <radialGradient id="ol2" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#A4C85C"/>
+          <stop offset="55%" stopColor="#7C9E36"/>
+          <stop offset="100%" stopColor="#567020"/>
+      </radialGradient>
+      <radialGradient id="olC1" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#A8C860"/>
+          <stop offset="100%" stopColor="#587220"/>
+      </radialGradient>
+      <radialGradient id="olC2" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#B4D268"/>
+          <stop offset="100%" stopColor="#628028"/>
+      </radialGradient>
+      <radialGradient id="olC3" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stopColor="#9EC458"/>
+          <stop offset="100%" stopColor="#527018"/>
+      </radialGradient>
+      <linearGradient id="p1f" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#DC9282"/>
+          <stop offset="45%" stopColor="#C87068"/>
+          <stop offset="100%" stopColor="#A85050"/>
+      </linearGradient>
+      <linearGradient id="p2f" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D8907E"/>
+          <stop offset="50%" stopColor="#C07068"/>
+          <stop offset="100%" stopColor="#A04848"/>
+      </linearGradient>
+      <linearGradient id="p3f" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#DC9486"/>
+          <stop offset="50%" stopColor="#C47270"/>
+          <stop offset="100%" stopColor="#A25050"/>
+      </linearGradient>
+      <linearGradient id="p4a" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#C46060"/>
+          <stop offset="100%" stopColor="#9A4040"/>
+      </linearGradient>
+      <linearGradient id="p4b" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D07272"/>
+          <stop offset="100%" stopColor="#A85050"/>
+      </linearGradient>
+      <linearGradient id="p4c" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#DC8880"/>
+          <stop offset="100%" stopColor="#B86060"/>
+      </linearGradient>
+      <linearGradient id="p5f" x1="0.0000" y1="0.0000" x2="0.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D88478"/>
+          <stop offset="100%" stopColor="#B05858"/>
+      </linearGradient>
+      <linearGradient id="p6a" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#C86868"/>
+          <stop offset="100%" stopColor="#9A4040"/>
+      </linearGradient>
+      <linearGradient id="p6b" x1="0.0000" y1="0.0000" x2="1.0000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#D47878"/>
+          <stop offset="100%" stopColor="#A85050"/>
+      </linearGradient>
+      <linearGradient id="pist1" x1="0.5000" y1="0.0000" x2="0.5000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#E2D282"/>
+          <stop offset="50%" stopColor="#CAB85A"/>
+          <stop offset="100%" stopColor="#A8943A"/>
+      </linearGradient>
+      <radialGradient id="pist2n" cx="44%" cy="34%" r="56%">
+          <stop offset="0%" stopColor="#AACC62"/>
+          <stop offset="100%" stopColor="#6C9230"/>
+      </radialGradient>
+      <linearGradient id="pist2s" x1="0.5000" y1="0.0000" x2="0.5000" y2="1.0000" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#E2D282"/>
+          <stop offset="100%" stopColor="#A8943A"/>
+      </linearGradient>
+      <radialGradient id="pt3n" cx="44%" cy="34%" r="56%">
+          <stop offset="0%" stopColor="#AACC62"/>
+          <stop offset="100%" stopColor="#6C9230"/>
+      </radialGradient>
+      <linearGradient id="pt3s" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#E0D080"/>
+          <stop offset="100%" stopColor="#A89038"/>
+      </linearGradient>
+      <radialGradient id="ptNutBig" cx="44%" cy="34%" r="56%">
+          <stop offset="0%" stopColor="#AACC62"/>
+          <stop offset="100%" stopColor="#6C9230"/>
+      </radialGradient>
+      <radialGradient id="raspB" cx="34%" cy="28%" r="66%">
+          <stop offset="0%" stopColor="#F07290"/>
+          <stop offset="100%" stopColor="#C83052"/>
+      </radialGradient>
+      <radialGradient id="s1hole" cx="50%" cy="58%" r="46%">
+          <stop offset="0%" stopColor="#2C0808"/>
+          <stop offset="100%" stopColor="#0E0202"/>
+      </radialGradient>
+      <radialGradient id="s1rim" cx="50%" cy="40%" r="52%">
+          <stop offset="0%" stopColor="#CC5858"/>
+          <stop offset="68%" stopColor="#8A2E2E"/>
+          <stop offset="100%" stopColor="#5C1818"/>
+      </radialGradient>
+      <radialGradient id="s2hole" cx="50%" cy="55%" r="46%">
+          <stop offset="0%" stopColor="#260808"/>
+          <stop offset="100%" stopColor="#100202"/>
+      </radialGradient>
+      <radialGradient id="s2rim" cx="48%" cy="38%" r="54%">
+          <stop offset="0%" stopColor="#D46060"/>
+          <stop offset="65%" stopColor="#932E2E"/>
+          <stop offset="100%" stopColor="#621818"/>
+      </radialGradient>
+      <linearGradient id="s3hole" x1="0.5000" y1="0.3333" x2="0.5000" y2="0.9333" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stopColor="#3C0A0A"/>
+          <stop offset="45%" stopColor="#1C0404"/>
+          <stop offset="100%" stopColor="#080202"/>
+      </linearGradient>
+      <radialGradient id="s3rim" cx="46%" cy="36%" r="56%">
+          <stop offset="0%" stopColor="#C25454"/>
+          <stop offset="62%" stopColor="#882828"/>
+          <stop offset="100%" stopColor="#5A1515"/>
+      </radialGradient>
+      <radialGradient id="s4hole" cx="50%" cy="56%" r="46%">
+          <stop offset="0%" stopColor="#280808"/>
+          <stop offset="100%" stopColor="#0C0101"/>
+      </radialGradient>
+      <radialGradient id="s4rim" cx="47%" cy="38%" r="54%">
+          <stop offset="0%" stopColor="#C85858"/>
+          <stop offset="64%" stopColor="#8C2C2C"/>
+          <stop offset="100%" stopColor="#5E1515"/>
+      </radialGradient>
+      <radialGradient id="s6H" cx="50%" cy="56%" r="45%">
+          <stop offset="0%" stopColor="#280808"/>
+          <stop offset="100%" stopColor="#0C0101"/>
+      </radialGradient>
+      <radialGradient id="s6a" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#CC5858"/>
+          <stop offset="64%" stopColor="#8E2A2A"/>
+          <stop offset="100%" stopColor="#5C1414"/>
+      </radialGradient>
+      <radialGradient id="s6b" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#D46262"/>
+          <stop offset="64%" stopColor="#963030"/>
+          <stop offset="100%" stopColor="#641818"/>
+      </radialGradient>
+      <radialGradient id="s6c" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#C25252"/>
+          <stop offset="64%" stopColor="#8A2424"/>
+          <stop offset="100%" stopColor="#581212"/>
+      </radialGradient>
+      <radialGradient id="s6d" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#BE5050"/>
+          <stop offset="64%" stopColor="#862020"/>
+          <stop offset="100%" stopColor="#561010"/>
+      </radialGradient>
+      <radialGradient id="s6e" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#D05A5A"/>
+          <stop offset="64%" stopColor="#902A2A"/>
+          <stop offset="100%" stopColor="#601616"/>
+      </radialGradient>
+      <radialGradient id="s6f" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#C65555"/>
+          <stop offset="64%" stopColor="#8C2525"/>
+          <stop offset="100%" stopColor="#5A1313"/>
+      </radialGradient>
+      <radialGradient id="sr5a" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#CA5555"/>
+          <stop offset="64%" stopColor="#8C2828"/>
+          <stop offset="100%" stopColor="#5A1515"/>
+      </radialGradient>
+      <radialGradient id="sr5b" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#D26060"/>
+          <stop offset="64%" stopColor="#942E2E"/>
+          <stop offset="100%" stopColor="#621818"/>
+      </radialGradient>
+      <radialGradient id="sr5c" cx="50%" cy="38%" r="52%">
+          <stop offset="0%" stopColor="#BE5050"/>
+          <stop offset="64%" stopColor="#872525"/>
+          <stop offset="100%" stopColor="#561010"/>
+      </radialGradient>
+      <radialGradient id="srH" cx="50%" cy="56%" r="45%">
+          <stop offset="0%" stopColor="#2A0808"/>
+          <stop offset="100%" stopColor="#0E0101"/>
+      </radialGradient>
+      <radialGradient id="straw" cx="34%" cy="28%" r="70%">
+          <stop offset="0%" stopColor="#F26878"/>
+          <stop offset="100%" stopColor="#C23038"/>
+      </radialGradient>
+      <radialGradient id="strawTop" cx="34%" cy="28%" r="70%">
+          <stop offset="0%" stopColor="#F26070"/>
+          <stop offset="100%" stopColor="#C02830"/>
+      </radialGradient>
+      <radialGradient id="wn1" cx="38%" cy="33%" r="62%">
+          <stop offset="0%" stopColor="#C29052"/>
+          <stop offset="60%" stopColor="#9C6E30"/>
+          <stop offset="100%" stopColor="#7A5020"/>
+      </radialGradient>
+      <radialGradient id="wn2" cx="38%" cy="33%" r="62%">
+          <stop offset="0%" stopColor="#BE8C4E"/>
+          <stop offset="100%" stopColor="#774C1C"/>
+      </radialGradient>
+      <radialGradient id="wn3a" cx="38%" cy="33%" r="62%">
+          <stop offset="0%" stopColor="#C29052"/>
+          <stop offset="100%" stopColor="#7A5020"/>
+      </radialGradient>
+      <radialGradient id="wn3b" cx="38%" cy="33%" r="62%">
+          <stop offset="0%" stopColor="#B88848"/>
+          <stop offset="100%" stopColor="#72481C"/>
+      </radialGradient>
+      <radialGradient id="wn3c" cx="38%" cy="33%" r="62%">
+          <stop offset="0%" stopColor="#CA9858"/>
+          <stop offset="100%" stopColor="#825E28"/>
+      </radialGradient>
     </defs>
   );
 }
